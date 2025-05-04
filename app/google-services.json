@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "500701252204",
+    "project_id": "keyweaver-703d8",
+    "storage_bucket": "keyweaver-703d8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500701252204:android:b7e82fd7f76a4c5bbf2649",
+        "android_client_info": {
+          "package_name": "com.personal.keyweaver"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl7pYclg5x2P7VlLjIJ1eVcAJxFt0OMgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Top bar: Profile/Email on left, Settings on top-right -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Profile Icon -->
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_profile"
+                android:background="@drawable/circle_background"
+                android:padding="8dp"
+                android:contentDescription="Profile Icon"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+            <!-- Email/Text -->
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="user@email.com"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_toEndOf="@id/ivProfile"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp" />
+
+            <!-- Settings Button -->
+            <TextView
+                android:id="@+id/tvSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#6200EE"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true" />
+        </RelativeLayout>
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generate a secure password"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:gravity="center" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use our generator to instantly create a secure, random password."
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp"
+            android:gravity="center" />
+
+        <!-- Generated Password Box -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/password_background"
+            android:padding="16dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvGeneratedPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="YourPassword123!"
+                android:textSize="20sp"
+                android:textColor="#222222" />
+
+            <ImageButton
+                android:id="@+id/btnCopyPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_copy"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Copy Password" />
+        </LinearLayout>
+
+        <!-- Customize Password Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customize your password"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="32dp" />
+
+        <!-- Password Length -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password Length"
+                android:textSize="16sp"
+                android:layout_marginEnd="16dp" />
+
+            <SeekBar
+                android:id="@+id/seekBarLength"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:max="32"
+                android:progress="6" />
+
+            <TextView
+                android:id="@+id/tvPasswordLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Checkboxes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <CheckBox
+                android:id="@+id/checkboxUppercase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Include Uppercase Letters"
+                android:checked="true" />
+
+            <CheckBox
+                android:id="@+id/checkboxLowercase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Include Lowercase Letters"
+                android:checked="true" />
+
+            <CheckBox
+                android:id="@+id/checkboxNumbers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Include Numbers"
+                android:checked="true" />
+
+            <CheckBox
+                android:id="@+id/checkboxSymbols"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Include Symbols"
+                android:checked="true" />
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGeneratePassword"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Generate Password"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="40dp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6200EE"
+            app:cornerRadius="30dp"
+            app:rippleColor="#3700B3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSavePassword"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Password"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="40dp"
+            android:textColor="#000000"
+            android:backgroundTint="#03DAC5"
+            app:cornerRadius="30dp"
+            app:rippleColor="#018786" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnViewPasswords"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Saved Passwords"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6200EE"
+            app:cornerRadius="30dp"
+            app:rippleColor="#3700B3" />
+
+    </LinearLayout>
+</ScrollView>
