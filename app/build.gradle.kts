@@ -2,8 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-
-    id("com.google.gms.google-services")
+    alias(libs.plugins.kotlin.kapt)
+//    id("com.google.gms.google-services")
+//    id("org.jetbrains.kotlin.kapt")
+//    id("org.jetbrains.kotlin.kapt") version "2.0.21"
 }
 
 android {
@@ -38,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
 }
 
@@ -78,5 +81,11 @@ dependencies {
 
     implementation ("com.google.firebase:firebase-auth-ktx:22.3.1")
     implementation ("com.google.firebase:firebase-firestore-ktx:24.10.1")
+
+    implementation ("androidx.security:security-crypto:1.1.0-alpha06")
+    implementation ("androidx.biometric:biometric:1.2.0-alpha05")
+
+    implementation("androidx.activity:activity-ktx:1.8.2")
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
 
 }
